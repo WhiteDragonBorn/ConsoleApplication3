@@ -61,35 +61,35 @@ void clear(Tlist& head) {
 //
 // }
 
-Tlist findPlace(Tlist list, int elem) {
-  Tlist temp = list;
-  // Tlist result = nullptr;
-  while (temp->next && temp->next->data <= elem) {
-    // result = temp;
-    temp = temp->next;
-  }
-  return temp;
-}
-
-void createByOrder(Tlist& list, int n) {
-  srand(time(0));
-  list = nullptr;
-  int temp = rand() % 100;
-  addToHead(list, temp);
-
-  for (size_t i = 0; i < n + 1; i++) {
-    temp = rand() % 100;
-  }
-}
-
-int returnSum(Tlist list) {
-  int sum = 0;
-  while (list->next->next != nullptr) {
-    list = list->next;
-  }
-  sum += list->data + list->next->data;
-  return sum;
-}
+//Tlist findPlace(Tlist list, int elem) {
+//  Tlist temp = list;
+//  // Tlist result = nullptr;
+//  while (temp->next && temp->next->data <= elem) {
+//    // result = temp;
+//    temp = temp->next;
+//  }
+//  return temp;
+//}
+//
+//void createByOrder(Tlist& list, int n) {
+//  srand(time(0));
+//  list = nullptr;
+//  int temp = rand() % 100;
+//  addToHead(list, temp);
+//
+//  for (int i = 0; i < n + 1; i++) {
+//    temp = rand() % 100;
+//  }
+//}
+//
+//int returnSum(Tlist list) {
+//  int sum = 0;
+//  while (list->next->next != nullptr) {
+//    list = list->next;
+//  }
+//  sum += list->data + list->next->data;
+//  return sum;
+//}
 
 BigInt::BigInt(string& str) {
   num = new Node;
@@ -150,31 +150,31 @@ BigInt::~BigInt() {
 //   cout << result; // убрать сяуты из классов
 // }
 
-void PrintWithRecursion(Tlist head) {
-  if (head != nullptr) {
-    cout << head->data << " ";  //
-    PrintWithRecursion(head->next);  // если поменять две строчки местами, то
-                                     // будет обратный вывод
-  }
-}
-
-int SumList(Tlist head) {
-  int result = 0;
-  Tlist moveHead = head;
-  while (moveHead != nullptr) {
-    result += moveHead->data;
-    moveHead = moveHead->next;
-  }
-  return result;
-}
-
-int SumListRecurse(Tlist head) {
-  if (head)
-    return 0;
-  else if (head != nullptr) {
-    return (head->data + SumListRecurse(head->next));
-  }
-}
+//void PrintWithRecursion(Tlist head) {
+//  if (head != nullptr) {
+//    cout << head->data << " ";  //
+//    PrintWithRecursion(head->next);  // если поменять две строчки местами, то
+//                                     // будет обратный вывод
+//  }
+//}
+//
+//int SumList(Tlist head) {
+//  int result = 0;
+//  Tlist moveHead = head;
+//  while (moveHead != nullptr) {
+//    result += moveHead->data;
+//    moveHead = moveHead->next;
+//  }
+//  return result;
+//}
+//
+//int SumListRecurse(Tlist head) {
+//  if (head)
+//    return 0;
+//  else if (head != nullptr) {
+//    return (head->data + SumListRecurse(head->next));
+//  }
+//}
 
 int Length(const BigInt& Q) {
   Tlist moveQ = Q.num;
@@ -292,7 +292,11 @@ BigInt operator+(const BigInt& Q, const BigInt& W) {
   return temp;
 }
 
-bool operator>(const BigInt& Q, const BigInt& W) {
+bool BigInt::operator>(BigInt& W) const {
+
+}
+
+bool operator>(BigInt& Q, BigInt& W) {
   bool result = false;
   int lenQ = Length(Q);
   int lenW = Length(W);
@@ -302,8 +306,8 @@ bool operator>(const BigInt& Q, const BigInt& W) {
   } else if (lenQ < lenW) {
     result = false;
   } else {
-    string strQ = toString(Q);
-    string strW = toString(W);
+    string strQ = Q.toString();
+    string strW = W.toString();
     int k = 0;
 
     for (int i = 0; i < lenQ; ++i) {
@@ -326,15 +330,15 @@ bool operator>(const BigInt& Q, const BigInt& W) {
   return result;
 }
 
-bool operator>=(const BigInt& Q, const BigInt& W) {
+bool operator>=(BigInt& Q, BigInt& W) {
   return !(Q < W);
 }
 
-bool operator<(const BigInt& Q, const BigInt& W) {
+bool operator<(BigInt& Q, BigInt& W) {
   return (W > Q);
 }
 
-bool operator<=(const BigInt& Q, const BigInt& W) {
+bool operator<=(BigInt& Q, BigInt& W) {
   return !(Q > W);
 }
 

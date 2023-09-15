@@ -24,9 +24,11 @@ int main(int argc, char* argv[]) {
   BigInt FirstNumber(temp);
   // cout << endl << Length(FirstNumber) << endl;
   //  cout << temp;
-  Print(FirstNumber);
-  // cout << temp;
+  cout << FirstNumber.toString();
   cout << endl;
+  //Print(FirstNumber);
+  // cout << temp;
+  
 
   // BigInt test(FirstNumber);
   // Print( test );
@@ -42,7 +44,8 @@ int main(int argc, char* argv[]) {
 
   BigInt SecondNumber(temp);
   // cout << endl << Length(SecondNumber) << endl;
-  Print(SecondNumber);
+  //Print(SecondNumber);
+  cout << SecondNumber.toString();
   cout << endl;
   // cout << "reached";
 
@@ -56,7 +59,8 @@ int main(int argc, char* argv[]) {
   // FirstNumber += SecondNumber;
   cout << "Sum: ";
   BigInt Summa = FirstNumber + SecondNumber;
-  Print(Summa);
+  cout << Summa.toString();
+  //Print(Summa);
   cout << endl;
 
   if (FirstNumber < SecondNumber) {
@@ -64,7 +68,7 @@ int main(int argc, char* argv[]) {
   } else {
     cout << "Difference: ";
     BigInt Razn = FirstNumber - SecondNumber;
-    Print(Razn);
+    cout << Razn.toString();
     cout << endl;
   }
 

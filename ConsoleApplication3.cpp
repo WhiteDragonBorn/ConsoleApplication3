@@ -2,18 +2,20 @@
 #include <iostream>
 #include <string>
 
-#include "header.h"
+#include "BigInt.h"
+#include "functions.h"
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int main(int argc, char* argv[]) {
-  ifstream FILE;
+  std::ifstream FILE;
   FILE.open("mydata.txt");
 
-  string tes = "0";
+  std::string tes = "0";
 
-  string temp;
-  getline(FILE, temp);
+  std::string temp;
+  std::getline(FILE, temp);
   // cout << temp.length();
   // if (temp.length() == 0 || temp[0] == '-') {
   //   cout << "Wrong input!";

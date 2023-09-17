@@ -8,23 +8,26 @@ class BigInt {
  private:
   Tlist num;
 
+  void TerminateZeros(std::string&);
+
  public:
   BigInt(std::string&);
   BigInt(const BigInt&);
   ~BigInt();
 
-  friend int Length(const BigInt&);
+  int length();
   std::string toString();
 
-  bool operator>(BigInt&) const;
+  BigInt& operator=(const BigInt&);
 
-  friend bool operator>(BigInt&, BigInt&);
-  friend bool operator>=(BigInt&, BigInt&);
-  friend bool operator<(BigInt&, BigInt&);
-  friend bool operator<=(BigInt&, BigInt&);
+  bool operator>(BigInt&);
+  bool operator>=(BigInt&);
+  bool operator<(BigInt&);
+  bool operator<=(BigInt&);
 
-  friend BigInt& operator+=(BigInt&, const BigInt&);
-  friend BigInt operator+(const BigInt&, const BigInt&);
-  friend BigInt& operator-=(BigInt&, const BigInt&);
-  friend BigInt operator-(const BigInt&, const BigInt&);
+  BigInt& operator+=(BigInt&);
+  BigInt operator+(BigInt&);
+
+  BigInt& operator-=(BigInt&);
+  BigInt operator-(BigInt&);
 };

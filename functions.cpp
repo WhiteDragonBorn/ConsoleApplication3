@@ -4,8 +4,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 void addToHead(Tlist& head, int elem) {
   Tlist p = new Node;
   p->data = elem;
@@ -55,6 +53,31 @@ void clear(Tlist& head) {
   while (!(isEmpty(head))) deleteFromHead(head);
 }
 
+// void PrintWithRecursion(Tlist head) {
+//   if (head != nullptr) {
+//     cout << head->data << " ";  //
+//     PrintWithRecursion(head->next);  // если поменять две строчки местами, то
+//                                      // будет обратный вывод
+//   }
+// }
+//
+// int SumList(Tlist head) {
+//   int result = 0;
+//   Tlist moveHead = head;
+//   while (moveHead != nullptr) {
+//     result += moveHead->data;
+//     moveHead = moveHead->next;
+//   }
+//   return result;
+// }
+//
+// int SumListRecurse(Tlist head) {
+//   if (head)
+//     return 0;
+//   else if (head != nullptr) {
+//     return (head->data + SumListRecurse(head->next));
+//   }
+// }
 // void createAsStack(Tlist& list, int n) {
 //
 // }

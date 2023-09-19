@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void BigInt::TerminateZeros(string& str) {
+void BigInt::TerminateZeros(string& str) const {
   char startchar = str[0];
   while (startchar == '0' && str.size() > 1) {
     str = str.substr(1, str.size());
@@ -48,7 +48,7 @@ BigInt::~BigInt() {
   num = nullptr;*/
 }
 
-int BigInt::length() {
+int BigInt::length() const {
   Tlist moveQ = num;
   int length = 0;
   while (moveQ != nullptr) {
@@ -60,7 +60,7 @@ int BigInt::length() {
   return length;
 }
 
-std::string BigInt::toString() {
+std::string BigInt::toString() const {
   string result = "";
   Tlist moveQ = num;
 
@@ -91,6 +91,7 @@ BigInt& BigInt::operator=(const BigInt& W) {
 
   return *(this);
 }
+
 bool BigInt::operator>(BigInt& W) {
   bool result = false;
   int lenQ = this->length();

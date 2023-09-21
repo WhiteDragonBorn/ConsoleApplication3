@@ -4,10 +4,7 @@ struct Node {
   int data;
   Node* next;
 
-  Node() {
-    data = 0;
-    next = nullptr;
-  }
+  Node();
 };
 
 typedef Node* Tlist;

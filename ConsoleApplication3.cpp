@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
   if (FirstNumber < SecondNumber) {
     cout << "Underflow, no substraction available." << endl;
   } else {
-    BigInt Razn(tes);
+    BigInt Razn;
     Razn = (FirstNumber - SecondNumber);
     cout << "Dif: " << Razn.toString();
   }

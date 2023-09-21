@@ -11,6 +11,7 @@ class BigInt {
   void TerminateZeros(std::string&);
 
  public:
+  BigInt();
   BigInt(std::string&);
   BigInt(const BigInt&);
   ~BigInt();

@@ -4,6 +4,11 @@
 #include <iostream>
 #include <string>
 
+Node::Node() {
+  data = 0;
+  next = nullptr;
+}
+
 void addToHead(Tlist& head, int elem) {
   Tlist p = new Node;
   p->data = elem;

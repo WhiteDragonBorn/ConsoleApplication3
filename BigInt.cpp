@@ -16,6 +16,12 @@ void BigInt::TerminateZeros(string& str) {
   }
 }
 
+BigInt::BigInt() {
+  num = new Node;
+  //num->data = 0;
+  //num->next = nullptr;
+}
+
 BigInt::BigInt(string& str) {
   BigInt::TerminateZeros(str);
   num = new Node;
@@ -153,7 +159,7 @@ BigInt& BigInt::operator+=(BigInt& W) {
     }
     if (remain != 0) addAfterNode(moveQ, remain);
 
-    return *(this);
+    //return *(this);
   } else if (n > m) {
     for (int i = 0; i < smallest; ++i) {
       int tempSum = moveQ->data + moveW->data + remain;
@@ -175,7 +181,7 @@ BigInt& BigInt::operator+=(BigInt& W) {
       addAfterNode(moveQ, remain);
     }
 
-    return *(this);
+    //return *(this);
   } else {
     for (int i = 0; i < smallest; ++i) {
       int tempSum = moveQ->data + moveW->data + remain;
@@ -199,8 +205,10 @@ BigInt& BigInt::operator+=(BigInt& W) {
       addAfterNode(moveQ, remain);
     }
 
-    return *(this);
+    //return *(this);
   }
+
+  return *this;
 }
 
 BigInt BigInt::operator+(BigInt& W) {
@@ -251,7 +259,7 @@ BigInt& BigInt::operator-=(BigInt& W) {
         break;
       }
     }
-    return *(this);
+    //return *(this);
   } else if (lenQ == lenW) {
     for (int i = 0; i < lenW; ++i) {
       int QDigit = moveQ->data;
@@ -273,7 +281,7 @@ BigInt& BigInt::operator-=(BigInt& W) {
       }
     }
 
-    return *(this);
+    //return *(this);
   } else {
     throw("Underflow");
   }

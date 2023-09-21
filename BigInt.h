@@ -8,7 +8,7 @@ class BigInt {
  private:
   Tlist num;
 
-  void TerminateZeros(std::string&);
+  void TerminateZeros(std::string&) const;
 
  public:
   BigInt();
@@ -16,8 +16,8 @@ class BigInt {
   BigInt(const BigInt&);
   ~BigInt();
 
-  int length();
-  std::string toString();
+  int length() const;
+  std::string toString() const;
 
   BigInt& operator=(const BigInt&);
 
